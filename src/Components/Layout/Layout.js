@@ -1,10 +1,13 @@
+import LinksList from "../LinksList/LinksList";
 import Profile from "../Profile/Profile";
 
 const Layout = () => {
   return (
     <>
       <Profile />
-      <main></main>
+      <main>
+        <LinksList />
+      </main>
     </>
   );
 };
