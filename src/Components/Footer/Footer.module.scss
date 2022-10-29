@@ -1,0 +1,30 @@
+@import "../scss/mixin";
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 5rem auto 0;
+    padding: 2rem 0 4rem;
+    border-top: 1px solid rgba(#667085, .5);
+
+    @include respond(bigTablet) {
+        width: 100%;
+        padding: 2rem 4rem 4rem;
+    }
+
+    @include respond(phone) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    & p {
+        font-size: 1.4rem;
+        color: Gray/500;
+
+        @include respond(phone) {
+            margin: 1.5rem 0;
+        }
+    }
+}

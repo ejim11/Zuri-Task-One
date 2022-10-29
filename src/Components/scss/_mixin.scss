@@ -7,8 +7,8 @@
     }
 
     @if $breakpoint ==phone {
-        @media (max-width: 34.375em) {
-            //550
+        @media (max-width: 38.125em) {
+            //610
             @content;
         }
     }

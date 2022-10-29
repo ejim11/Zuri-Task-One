@@ -20,6 +20,10 @@ html {
   @include respond(laptop) {
     font-size: 62.5%; //1rem = 10px    
   }
+
+  @include respond(miniTablet) {
+    font-size: 56.25%; //1rem = 9px    
+  }
 }
 
 body {
@@ -28,4 +32,17 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.App {
+  width: 70%;
+  margin: 0 auto;
+
+  @include respond(bigLaptop) {
+    width: 85%;
+  }
+
+  @include respond(laptop) {
+    width: 100%;
+  }
 }

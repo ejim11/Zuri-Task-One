@@ -1,5 +1,6 @@
 import LinksList from "../LinksList/LinksList";
 import Profile from "../Profile/Profile";
+import Footer from "../Footer/Footer";
 
 const Layout = () => {
   return (
@@ -8,6 +9,7 @@ const Layout = () => {
       <main>
         <LinksList />
       </main>
+      <Footer />
     </>
   );
 };
