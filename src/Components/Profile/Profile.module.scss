@@ -1,0 +1,90 @@
+@import "../scss/base";
+@import "../scss/mixin";
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+    position: relative;
+    width: 100%;
+
+    & .profile-pic {
+        width: 9rem;
+        height: 9rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    & .share-btn {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        right: 15rem;
+        cursor: pointer;
+        transition: all .2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &-1 {
+            display: block;
+
+            @include respond(phone) {
+                display: none;
+            }
+        }
+
+        &-2 {
+            display: none;
+
+            @include respond(phone) {
+                display: block;
+            }
+        }
+
+        @include respond(bigTablet) {
+            right: 10rem;
+        }
+
+        @include respond(phone) {
+            right: 3rem;
+        }
+
+        @include respond(miniPhone) {
+            right: 1rem;
+        }
+
+
+    }
+
+    & .name {
+        font-weight: 700;
+        font-size: 2rem;
+        margin: 1.5rem 0 0;
+        line-height: 3rem;
+    }
+
+    & .profile-links {
+        display: flex;
+        align-items: center;
+        margin-bottom: .5rem;
+
+        & .twitter-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+            margin-right: .5rem;
+        }
+
+        & a {
+            text-decoration: none;
+            color: $color-black;
+            font-size: 1.4rem;
+        }
+    }
+
+    & .slack-link {
+        display: none;
+    }
+}
