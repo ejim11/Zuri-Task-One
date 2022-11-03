@@ -1,6 +1,12 @@
+import classes from "./InputComponent.module.scss";
+
 const InputComponent = (props) => {
   return (
-    <div>
+    <div
+      className={`${classes["input-container"]} ${
+        props.inputInvalid ? classes["invalid-input"] : classes["valid-input"]
+      }`}
+    >
       <label>{props.label}</label>
       <input
         type={props.type}

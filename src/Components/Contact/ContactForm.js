@@ -113,7 +113,7 @@ const ContactForm = () => {
         onChange={emailInputChangeHandler}
         onBlur={emailInputBlurHandler}
         inputInvalid={enteredEmailIsInValid}
-        errorText={"email is invalid"}
+        errorText={"Email is invalid"}
         className={"email"}
       />
       <div>

@@ -1,0 +1,52 @@
+@import "../scss/base";
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+
+    & label {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        color: $color-text;
+    }
+
+    & input {
+        background: #FFFFFF;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+        border-radius: 8px;
+        padding: 1rem;
+        font-weight: 400;
+        outline: none;
+
+        &::placeholder {
+            color: #667085;
+        }
+    }
+
+}
+
+.invalid-input {
+    & input {
+        border: 1px solid $color-red;
+        color: $color-red;
+
+        &:focus {
+            border-color: $color-red;
+        }
+    }
+
+    p {
+        color: $color-red;
+        font-size: 1.4rem;
+    }
+}
+
+.valid-input {
+    & input {
+        border: 1px solid #D0D5DD;
+
+        &:focus {
+            border-color: $color-dark;
+        }
+    }
+}
