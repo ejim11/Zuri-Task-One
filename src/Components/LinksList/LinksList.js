@@ -10,6 +10,7 @@ const LinksList = () => {
       text={link.text}
       id={link.id}
       link={link.link}
+      type={link.type}
     />
   ));
 
