@@ -1,11 +1,20 @@
 import useInput from "../../hooks/user-input";
 import InputComponent from "../InputComponent/InputComponent";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import classes from "./ContactForm.module.scss";
 
 const ContactForm = () => {
   const checkBoxRef = useRef(null);
   const [errorCheckBox, setErrorCheckBox] = useState(false);
+  const [formIsInvalid, setFormIsInvalid] = useState(false);
+
+  useEffect(() => {
+    if (formIsInvalid) {
+      setTimeout(() => {
+        setFormIsInvalid(false);
+      }, 5000);
+    }
+  }, [formIsInvalid]);
 
   const {
     value: enteredFirstName,
@@ -44,8 +53,19 @@ const ContactForm = () => {
   const submitFormHandler = (e) => {
     e.preventDefault();
 
+    // checking if checkbox is clicked before submitting
     if (!checkBoxRef.current.checked) {
       setErrorCheckBox(true);
+    }
+
+    // checking if form inputs are valid
+    if (
+      enteredFirstName.trim() === "" ||
+      enteredLastName.trim() === "" ||
+      enteredEmail.trim() === "" ||
+      enteredMessage.trim() === ""
+    ) {
+      setFormIsInvalid(true);
     }
 
     if (
@@ -80,6 +100,15 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={submitFormHandler} className={classes.form}>
+      <p
+        className={`${classes["form-error-text"]} ${
+          formIsInvalid
+            ? classes["display-form-error"]
+            : classes["hide-form-error"]
+        }`}
+      >
+        Please make sure all input fields are filled
+      </p>
       <InputComponent
         type={"text"}
         id={"first_name"}

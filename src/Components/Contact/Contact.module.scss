@@ -5,6 +5,7 @@
     width: 60%;
     margin: 7rem auto 14rem;
 
+
     @include respond(miniLaptop) {
         width: 80%;
     }
