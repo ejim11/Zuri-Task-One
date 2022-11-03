@@ -37,6 +37,7 @@ img {
 .App {
   width: 70%;
   margin: 0 auto;
+  position: relative;
 
   @include respond(bigLaptop) {
     width: 85%;

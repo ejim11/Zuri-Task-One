@@ -111,3 +111,24 @@
 .checkbox-valid {
     color: $color-text;
 }
+
+.form-error-text {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    background-color: rgba($color-red, .8);
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    color: #fff;
+    transition: all .3s ease-in;
+}
+
+.display-form-error {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.hide-form-error {
+    opacity: 0;
+    transform: translateX(10%);
+}
