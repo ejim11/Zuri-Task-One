@@ -13,4 +13,8 @@
     @include respond(phone) {
         width: 85%;
     }
+
+    @include respond(miniPhone) {
+        width: 90%;
+    }
 }
