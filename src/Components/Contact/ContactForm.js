@@ -91,6 +91,7 @@ const ContactForm = () => {
       lastNameInputReset();
       emailInputReset();
       messageInputReset();
+      checkBoxRef.current.checked = false;
     }
   };
 
