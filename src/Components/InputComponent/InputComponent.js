@@ -7,7 +7,7 @@ const InputComponent = (props) => {
         props.inputInvalid ? classes["invalid-input"] : classes["valid-input"]
       } ${props.className}`}
     >
-      <label>{props.label}</label>
+      <label htmlFor={props.id}>{props.label}</label>
       <input
         type={props.type}
         id={props.id}

@@ -152,6 +152,7 @@ const ContactForm = () => {
       >
         <label>Message</label>
         <textarea
+          htmlFor={"message"}
           id={"message"}
           value={enteredMessage}
           placeholder={
