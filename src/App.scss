@@ -24,6 +24,10 @@ html {
   @include respond(miniTablet) {
     font-size: 56.25%; //1rem = 9px    
   }
+
+  @include respond(miniPhone) {
+    font-size: 50%; //1rem = 8px    
+  }
 }
 
 body {
@@ -37,7 +41,6 @@ img {
 .App {
   width: 70%;
   margin: 0 auto;
-  position: relative;
 
   @include respond(bigLaptop) {
     width: 85%;
