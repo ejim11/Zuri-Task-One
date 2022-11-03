@@ -1,5 +1,4 @@
 const InputComponent = (props) => {
-  console.log(props.value, props.inputInvalid);
   return (
     <div>
       <label>{props.label}</label>

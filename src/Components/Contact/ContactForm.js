@@ -1,7 +1,12 @@
 import useInput from "../../hooks/user-input";
 import InputComponent from "../InputComponent/InputComponent";
+import { useRef, useState } from "react";
+import classes from "./ContactForm.module.scss";
 
 const ContactForm = () => {
+  const checkBoxRef = useRef(null);
+  const [errorCheckBox, setErrorCheckBox] = useState(false);
+
   const {
     value: enteredFirstName,
     valueIsValid: enteredFirstNameIsValid,
@@ -35,8 +40,46 @@ const ContactForm = () => {
     valueInputBlurHandler: messageInputBlurHandler,
     resetValue: messageInputReset,
   } = useInput((val) => val.trim().length > 5);
+
+  const submitFormHandler = (e) => {
+    e.preventDefault();
+
+    if (!checkBoxRef.current.checked) {
+      setErrorCheckBox(true);
+    }
+
+    if (
+      enteredFirstNameIsValid &&
+      enteredLastNameIsValid &&
+      enteredEmailIsValid &&
+      enteredMessageIsValid &&
+      checkBoxRef.current.checked
+    ) {
+      // use form data
+      const data = {
+        firstName: enteredFirstName,
+        lastName: enteredLastName,
+        email: enteredEmail,
+        message: enteredMessage,
+      };
+      console.log(data);
+    }
+
+    // reset input fields
+    if (checkBoxRef.current.checked) {
+      firstNameInputReset();
+      lastNameInputReset();
+      emailInputReset();
+      messageInputReset();
+    }
+  };
+
+  const removeErrorCheckBoxHandler = () => {
+    setErrorCheckBox(false);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitFormHandler} className={classes.form}>
       <InputComponent
         type={"text"}
         id={"first_name"}
@@ -86,11 +129,20 @@ const ContactForm = () => {
         ></textarea>
         {enteredMessageIsInValid && <p>Enter a message</p>}
       </div>
-      <div>
+      <div
+        className={
+          errorCheckBox ? classes["checkbox-error"] : classes["checkbox-main"]
+        }
+      >
         <label htmlFor={"agreement"}>
           You agree to providing your data to Ejim who may contact you.
         </label>
-        <input type={"checkbox"} id={"agreement"} />
+        <input
+          type={"checkbox"}
+          id={"agreement"}
+          ref={checkBoxRef}
+          onClick={removeErrorCheckBoxHandler}
+        />
       </div>
       <button type="submit">Send message</button>
     </form>
