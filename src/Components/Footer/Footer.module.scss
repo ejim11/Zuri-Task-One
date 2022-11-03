@@ -17,7 +17,7 @@ footer {
     @include respond(phone) {
         flex-direction: column;
         align-items: flex-start;
-        padding: 2rem 2rem 4rem;
+        padding: 2rem 3rem 4rem;
     }
 
     & p {
