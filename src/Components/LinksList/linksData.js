@@ -30,12 +30,6 @@ const linksData = [
     id: `book__design`,
     text: "Improve your design skills by exploring free books on elegant design",
   },
-  {
-    title: "Contact Me",
-    link: "/contact",
-    id: "contact",
-    text: "Interested in working with me and creating innovative designs, contact me.",
-  },
 ];
 
 export default linksData;

@@ -1,5 +1,6 @@
 import classes from "./LinkItem.module.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LinkItem = (props) => {
   const [displayText, setDisplayText] = useState(false);
@@ -11,11 +12,9 @@ const LinkItem = (props) => {
       className={classes["btn"]}
       onMouseEnter={() => {
         setDisplayText(true);
-        console.log("enter");
       }}
       onMouseLeave={() => {
         setDisplayText(false);
-        console.log("leave");
       }}
     >
       {props.title}
