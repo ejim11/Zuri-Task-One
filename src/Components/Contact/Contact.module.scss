@@ -1,0 +1,30 @@
+@import "../scss/mixin";
+@import "../scss/base";
+
+.contact-section {
+    width: 60%;
+    margin: 5rem auto;
+
+    @include respond(miniLaptop) {
+        width: 80%;
+    }
+
+    @include respond(phone) {
+        width: 90%;
+    }
+
+    & h2 {
+        font-size: 3.6rem;
+        font-weight: 600;
+        color: $color-dark;
+    }
+
+    & .intro-text {
+        margin: 2rem 0;
+        font-size: 2rem;
+        font-weight: 400;
+        color: #475467;
+    }
+
+
+}
