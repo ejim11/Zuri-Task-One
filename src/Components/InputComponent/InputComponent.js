@@ -5,7 +5,7 @@ const InputComponent = (props) => {
     <div
       className={`${classes["input-container"]} ${
         props.inputInvalid ? classes["invalid-input"] : classes["valid-input"]
-      }`}
+      } ${props.className}`}
     >
       <label>{props.label}</label>
       <input

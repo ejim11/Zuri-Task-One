@@ -3,7 +3,7 @@
 
 .contact-section {
     width: 60%;
-    margin: 5rem auto;
+    margin: 7rem auto 14rem;
 
     @include respond(miniLaptop) {
         width: 80%;
@@ -20,7 +20,7 @@
     }
 
     & .intro-text {
-        margin: 2rem 0;
+        margin: 2rem 0 4rem;
         font-size: 2rem;
         font-weight: 400;
         color: #475467;

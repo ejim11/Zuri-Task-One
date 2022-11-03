@@ -90,7 +90,6 @@ const ContactForm = () => {
         onBlur={firstNameInputBlurHandler}
         inputInvalid={enteredFirstNameIsInValid}
         errorText={"Enter a name"}
-        className={"name"}
       />
       <InputComponent
         type={"text"}
@@ -102,21 +101,26 @@ const ContactForm = () => {
         onBlur={lastNameInputBlurHandler}
         inputInvalid={enteredLastNameIsInValid}
         errorText={"Enter a name"}
-        className={"name"}
       />
       <InputComponent
         type={"email"}
         id={"email"}
         label={"Email"}
-        placeholder={"favourejim56@gmail.com"}
+        placeholder={"albertgrey55@gmail.com"}
         value={enteredEmail}
         onChange={emailInputChangeHandler}
         onBlur={emailInputBlurHandler}
         inputInvalid={enteredEmailIsInValid}
         errorText={"Email is invalid"}
-        className={"email"}
+        className={classes["email"]}
       />
-      <div>
+      <div
+        className={`${classes["text-area-container"]} ${
+          enteredMessageIsInValid
+            ? classes["invalid-input"]
+            : classes["valid-input"]
+        }`}
+      >
         <label>Message</label>
         <textarea
           id={"message"}
@@ -130,9 +134,9 @@ const ContactForm = () => {
         {enteredMessageIsInValid && <p>Enter a message</p>}
       </div>
       <div
-        className={
-          errorCheckBox ? classes["checkbox-error"] : classes["checkbox-main"]
-        }
+        className={`${classes.checkbox} ${
+          errorCheckBox ? classes["checkbox-error"] : classes["checkbox-valid"]
+        }`}
       >
         <label htmlFor={"agreement"}>
           You agree to providing your data to Ejim who may contact you.
@@ -144,7 +148,7 @@ const ContactForm = () => {
           onClick={removeErrorCheckBoxHandler}
         />
       </div>
-      <button type="submit" id={"btn__submit"}>
+      <button type="submit" id={"btn__submit"} className={classes.btn}>
         Send message
       </button>
     </form>
