@@ -45,6 +45,10 @@
         justify-content: flex-end;
         font-size: 1.5rem;
 
+        @include respond(phone) {
+            align-items: flex-start;
+        }
+
         & input {
             cursor: pointer;
         }
@@ -75,6 +79,10 @@
             font-weight: 400;
             outline: none;
             font-size: 16px !important;
+
+            @include respond(phone) {
+                height: 15rem;
+            }
 
             &::placeholder {
                 color: #667085;
